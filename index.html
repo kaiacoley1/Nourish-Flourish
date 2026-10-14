@@ -10,8 +10,8 @@
 <meta name="apple-mobile-web-app-title" content="Nourish">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
 <link rel="manifest" href="manifest.webmanifest">
-<link rel="apple-touch-icon" href="icons/icon-180.png">
-<link rel="icon" href="icons/icon-192.png">
+<link rel="apple-touch-icon" href="icon-180.png">
+<link rel="icon" href="icon-192.png">
 <style>
 :root{--blush:#f7c9d4;--baby:#fde8ee;--cream:#fff8f1;--white:#fff;--rose:#e4829f;--deep:#a8456a;--ink:#4f2f3b;--soft:#8a6573;--line:#f3d6de;--ok:#6fae8c;
 --serif:"New York",Georgia,"Iowan Old Style","Palatino Linotype",serif;--sans:ui-rounded,"SF Pro Rounded","Avenir Next Rounded","Avenir Next",system-ui,-apple-system,sans-serif}
@@ -283,7 +283,7 @@ function tick(){if(!S.s.remind||!S.s.days.includes(new Date().getDay()))return;c
   if(mins>=at-2&&mins<=at+90&&!ck(d,m.id)&&!shown.has(key)){shown.add(key);const txt=/snack/i.test(m.label)?"Hey pretty girl, it's snack time! 🌷":"It's time for "+m.label.toLowerCase()+". Nourish yourself, gently. 🌸";
    $("#banner").innerHTML='<div class="banner" role="status"><div>'+esc(txt)+'</div><button id="bd">Done ✓</button><button id="bl">Later</button></div>';
    $("#bd").onclick=()=>{S.checks[d]=S.checks[d]||{};S.checks[d][S.s.sched+":"+m.id]=1;save();$("#banner").innerHTML="";render()};$("#bl").onclick=()=>$("#banner").innerHTML="";
-   if("Notification" in window&&Notification.permission==="granted"&&document.hidden)navigator.serviceWorker?.ready.then(r=>r.showNotification("Nourish & Flourish",{body:txt,icon:"icons/icon-192.png"}));break}}}
+   if("Notification" in window&&Notification.permission==="granted"&&document.hidden)navigator.serviceWorker?.ready.then(r=>r.showNotification("Nourish & Flourish",{body:txt,icon:"icon-192.png"}));break}}}
 setInterval(tick,30000);document.addEventListener("visibilitychange",()=>{if(!document.hidden)tick()});
 
 /* ---------- start ---------- */
